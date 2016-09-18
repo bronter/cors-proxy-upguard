@@ -18,6 +18,9 @@ func Proxy(c echo.Context) error {
     request = request.Set(header, h.Get(header))
   }
 
+  q := r.URL().QueryString()
+  request = request.Query(q)
+
 	body, err := ioutil.ReadAll(io.LimitReader(r.Body(), 1048576))
 
   if (err != nil) {
