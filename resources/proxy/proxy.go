@@ -11,7 +11,7 @@ func Proxy(c echo.Context) error {
 
   r := c.Request()
 
-  request := gorequest.New().CustomMethod(r.Method(), "https://app.upguard.com/api/v2" + r.URL().Path())
+  request := gorequest.New().CustomMethod(r.Method(), "https://app.upguard.com/" + r.URL().Path())
 
   h := r.Header()
   for _, header := range h.Keys() {
