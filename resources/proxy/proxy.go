@@ -18,6 +18,9 @@ func Proxy(c echo.Context) error {
     request = request.Set(header, h.Get(header))
   }
 
+  // Need to re-write our host header
+  request = request.Set("Host", "app.upguard.com")
+
   q := r.URL().QueryString()
   request = request.Query(q)
 
