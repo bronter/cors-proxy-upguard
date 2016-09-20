@@ -11,6 +11,6 @@ func main() {
 	// File path for TLS key
 	tlsKeyFile := ""
 	// Start the server
-	println("Listening at :9000")
-	resources.NewRouter().Run(fasthttp.WithTLS(":9000", tlsCertFile, tlsKeyFile))
+	println("Listening at :80")
+	resources.NewRouter().Run(fasthttp.WithTLS(":80", tlsCertFile, tlsKeyFile))
 }
